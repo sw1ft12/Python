@@ -16,20 +16,14 @@
 {% endwith %}
 
 <form method="POST">
-    <table>
-        <tr>
-            <td>Имя пользователя</td>
-            <td><input type="text" name="username"></td>
-        </tr>
-        <tr>
-            <td>Пароль</td>
-            <td><input type="password" name="password"></td>
-        </tr>
-        <tr>
-            <td><a href="/register">Регистрация</a></td>
-            <td><input type="submit" value="Подтвердить"></td>
-        </tr>
-    </table>
+  <div class="mb-3">
+    <label for="username" class="form-label">Имя пользователя</label>
+    <input type="text" class="form-control" name="username" aria-describedby="emailHelp">
+  </div>
+  <div class="mb-3">
+    <label for="password" class="form-label">Пароль</label>
+    <input type="password" class="form-control"  name="password">
+  </div>
+  <button type="submit" class="btn btn-success">Подтвердить</button>
 </form>
 {% endblock %}
-
