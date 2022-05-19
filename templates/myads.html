@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Мои объявления
+{% endblock %}
+
+{% block body %}
+    <div class="container mt-5">
+    <h1>Мои объявления</h1>
+
+        {% for el in ads %}
+        <div class="alert alert-info">
+            <h2>{{ el.title }}</h2>
+            <p><b>{{ el.date.date() }}</b></p>
+            <a href="/ads/{{ el.id }}" class="btn btn-warning">Подробнее</a>
+        </div>
+        {% endfor %}
+</div>
+{% endblock %}
