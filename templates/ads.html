@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+
+{% block title %}
+Объявления
+{% endblock %}
+
+{% block body %}
+    <div class="container mt-5">
+    <h1>Все объявления</h1>
+
+    {% if ads|length > 0 %}
+        {% for el in ads %}
+        <div class="alert alert-info">
+            <div id="title">
+                <h2> {{ el.title }} </h2>
+            </div>
+            <div id="date">
+                <p><b>{{ el.date.date() }}</b></p>
+             </div>
+             <div id="user_id">
+                 <p><b>{{ el.user_id }}</b></p>
+             </div>
+            <a href="/ads/{{ el.id }}" class="btn btn-warning">Подробнее</a>
+        </div>
+        {% endfor %}
+    {% else %}
+    <p>Нет объявлений</p>
+    {% endif %}
+</div>
+{% endblock %}
